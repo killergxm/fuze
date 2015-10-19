@@ -1,0 +1,556 @@
+/*引入基础文件*/
+ @import "reset";
+ @import "compass";
+ @import "mixin","variables";
+
+ /*mixin*/
+ @mixin background($imgname) {
+ 	background: url('../images/story/'+$imgname) no-repeat 0 0;
+ }
+ @mixin imgPutMiddle($imgname,$width,$height,$position:absolute) {
+ 	@include background($imgname);
+ 	width: $width+px;
+ 	height: $height+px;
+ 	@include putMiddle($width,$position);
+ }
+ @mixin active_ss($p:1s ease-in-out 0s) {
+	@include transition($p);
+	@at-root {
+		.active &{
+			@content;
+		}
+	}
+ }
+ /*变量*/
+ $title_height : 140px;
+
+ /*样式*/
+ .title {
+ 	position: absolute;
+ 	top: 0;
+ 	width: 100%;
+ 	@include min-width(1080px);
+ 	height: $title_height;
+ 	background: #999;
+ 	z-index: 99;
+ 	display: none;
+ 	@at-root {
+ 		.title-logo {
+ 			@include background('logo.png');
+ 			width: 169px;
+ 			height: 30px;
+ 			@include putMiddle(168);
+ 			top: 20px;
+			z-index: 92;
+ 		}
+ 		.title-text {
+			font-size: 24px;
+			color: #fff;
+			text-align: center;
+			margin: 70px auto 0;
+ 		}
+ 	}
+ }
+
+ %page {
+ 	width: 100%;
+ 	height: 100%;
+ 	@include min-width(1080px);
+ 	@include min-height(720px);
+ 	left: 0;
+ 	top: 0;
+ 	position: absolute;
+ 	overflow: hidden;
+ 	top: -100%;
+ }
+
+
+ .wrap {
+ 	width: 100%;
+ 	height: 100%;
+ 	overflow: hidden;
+ 	@include min-width(1080px);
+ 	@include min-height(720px);
+ 	left: 0;
+ 	top: 0;
+ 	position: absolute;
+ }
+
+ .page1 {
+ 	@extend %page;
+ 	top:0;
+	background: #63c3d5;
+	@at-root {
+		.p1-text {
+			font-size: 36px;
+			color: white;
+			line-height: 72px;
+			width: 100%;
+			text-align: center;
+			margin-top: 100px;
+		}
+		.p1-img1 {
+			@include background('ball.png');
+			width: 566px;
+			height: 566px;
+			@include putMiddle(400,relative);
+			margin-top: 50px;
+		}
+		.p1-img2 {
+			@include background('rocket.png');
+			width: 36px;
+			height: 179px;
+			@include putMiddle(36);
+			bottom: 0;
+			margin-bottom: -179px;
+		}
+		.p1-start {
+			border: none;
+			cursor: pointer;
+			outline: none;
+			@include background('begin1.png');
+			width: 168px;
+			height: 38px;
+			@include putMiddle(132,relative);
+			top: -80px;
+			@include animation(btn_anm 0.7s ease-in infinite alternate);
+		}
+	}
+ }
+
+
+ @include keyframes(btn_anm) {
+	from {
+		@include transform(scale(1, 1));
+	}
+	to {
+		@include transform(scale(1.1, 1.1));
+	}
+ }
+
+ .page2 {
+ 	@extend %page;
+ 	background: #b7fffc;
+	@at-root {
+		.p2-text {
+			z-index: 93;
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			margin-top: -180px;
+			left: 50%;
+			color: #00b69e;
+			font-size: 24px;
+			/*样式变化动画*/
+			@include opacity(0);
+			margin-left: 1000px;
+			@include active_ss {
+				margin-left: -30px;
+				@include opacity(1);
+			}
+			
+		}
+		.p2-img1 {
+			z-index: 93;
+			@include background('fc_logo.png');
+			width: 257px;
+			height: 177px;
+			@include putMiddle(257);
+			top: 50%;
+			margin-top: -210px;
+			/*样式变化动画*/
+			margin-left: -1000px;
+			@include opacity(0);
+			@include active_ss {
+				margin-left: -500px;
+				@include opacity(1);
+			}
+		}
+		.p2-img2 {
+			@include background('fc.jpg');
+			width: 1078px;
+			height: 503px;
+			@include putMiddle(1078);
+			top: 50%;
+			margin-left: -500px;
+			margin-top: -110px;
+		}
+	}
+ }
+
+ .page3 {
+ 	@extend %page;
+ 	background: #b7fffc;
+ 	@at-root {
+ 		.p3-bottom {
+ 			z-index: 92;
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			margin-top: $title_height/2;
+			height: 50%;
+			background: #99fff5;
+ 		}
+ 		$tetris_h : 347px;
+ 		.p3-img1 {
+ 			z-index: 91;
+ 			@include background('tetris.jpg');
+ 			width: 900px;
+ 			height: $tetris_h;
+ 			@include putMiddle(900);
+ 			bottom: 50%;
+ 			margin-bottom: -$title_height/2-$tetris_h;
+ 			.active &{
+ 				margin-bottom: -$title_height/2;
+ 				@include animation(tetris 3s linear 1 both);
+ 			}
+ 		}
+ 		@include keyframes(tetris) {
+ 			0% {
+ 				margin-bottom: -$title_height/2-$tetris_h;
+ 			}
+ 			19% {
+				margin-bottom: -$title_height/2-$tetris_h;
+ 			}
+ 			20% {
+				margin-bottom: -$title_height/2-$tetris_h*(1 - 1/5);
+ 			}
+ 			39% {
+				margin-bottom: -$title_height/2-$tetris_h*(1 - 1/5);
+ 			}
+ 			40% {
+ 				margin-bottom: -$title_height/2-$tetris_h*(1 - 2/5);				
+ 			}
+ 			59% {
+ 				margin-bottom: -$title_height/2-$tetris_h*(1 - 2/5);				
+ 			}
+ 			60% {
+ 				margin-bottom: -$title_height/2-$tetris_h*(1 - 3/5);				
+ 			}
+ 			79% {
+ 				margin-bottom: -$title_height/2-$tetris_h*(1 - 3/5);				
+ 			}
+ 			80% {
+ 				margin-bottom: -$title_height/2-$tetris_h*(1 - 4/5);
+ 			}
+ 			99% {
+				margin-bottom: -$title_height/2-$tetris_h*(1 - 4/5);
+ 			}
+ 			100% {
+ 				margin-bottom: -$title_height/2;
+ 			}
+ 		}
+ 		.p3-img2 {
+ 			z-index: 93;
+ 			@include background('tetris_middle.png');
+ 			width: 900px;
+ 			height: 115px;
+ 			@include putMiddle(900);
+ 			top: 50%;
+ 			margin-top: $title_height/2;
+ 		}
+ 		.p3-img3 {
+ 			z-index: 93;
+ 			@include imgPutMiddle('tetris_bottom.png',240,160);
+ 			top: 50%;
+ 			margin-top: $title_height/2+115px;
+ 			margin-left: -75px;
+ 		}
+ 		.p3-img4 {
+ 			z-index: 93;
+ 			@include imgPutMiddle('tetris_a.png',115,71);
+ 			top: 50%;
+ 			margin-top: $title_height/2+50px;
+ 			margin-left: -300px;
+ 		}
+ 		.p3-text {
+ 			z-index: 93;
+ 			position: absolute;
+ 			left: 50%;
+ 			top: 50%;
+ 			margin-top: $title_height/2+150px;
+ 			font-size: 24px;
+ 			color: #112e8c;
+ 			h {
+ 				font-size: 36px;
+ 			}
+			
+			/*样式变化动画*/
+			margin-left: -1000px;
+			@include opacity(0);
+ 			@include active_ss {
+				margin-left: -350px;
+				@include opacity(1);
+ 			}
+ 		}
+ 	}
+ }
+
+ .page4 {
+ 	@extend %page;
+	background: #d0e9e4;
+	@at-root {
+		.p4-img1 {
+			@include imgPutMiddle('woman.jpg',274,620);
+			top: 50%;
+			margin-top: -250px;
+
+			/*样式变化动画*/
+			margin-left: -1000px;
+			@include opacity(0);
+ 			@include active_ss {
+				margin-left: -200px;
+				@include opacity(1);
+ 			}
+		}
+		.p4-img2 {
+			@include imgPutMiddle('man.jpg',217,620);
+			top: 50%;
+			margin-top: -250px;
+
+			/*样式变化动画*/
+			margin-left: 1000px;
+			@include opacity(0);
+ 			@include active_ss {
+				margin-left: 200px;
+				@include opacity(1);
+ 			}
+		}
+		.p4-img3 {
+			@include imgPutMiddle('ps.jpg',401,500);
+			top: 50%;
+			margin-top: -250px;
+
+			/*样式变化动画*/
+			margin-left: -1000px;
+			@include opacity(0);
+ 			@include active_ss(1s ease-in-out 1s) {
+				margin-left: -700px;
+				@include opacity(1);
+ 			}
+		}
+		.p4-text {
+			font-size: 24px;
+			color: #0faada;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -700px;
+			margin-top: 270px;
+
+			/*样式变化动画*/
+			margin-left: -1000px;
+			@include opacity(0);
+ 			@include active_ss(1s ease-in-out 1s) {
+				margin-left: -700px;
+				@include opacity(1);
+ 			}
+		}
+	}
+ }
+
+ .page5 {
+ 	@extend %page;
+ 	background: #7a67e7;
+ 	@at-root {
+ 		.p5-img1 {
+ 			@include imgPutMiddle('cloud.jpg',1353,234);
+ 			top: 0;
+ 			margin-top: $title_height+20px;
+ 			@include animation(cloudmove 15s linear infinite alternate);
+ 		}
+ 		.p5-img2 {
+ 			@include imgPutMiddle('arcade.jpg',1205,486);
+ 			bottom: 0;
+ 		}
+ 	}
+ }
+
+ @include keyframes(cloudmove) {
+ 	from {
+ 		margin-left: -1000px;
+ 	}
+ 	to {
+ 		margin-left: -300px;
+ 	}
+ }
+
+ .page6 {
+ 	@extend %page;
+ 	background: #54a7b7;
+ 	@at-root {
+ 		.p6-img1 {
+ 			@include imgPutMiddle('stop.jpg',1104,700);
+ 			top: 50%;
+ 			margin-top: -350px;
+ 		}
+ 		.p6-img2 {
+ 			@include imgPutMiddle('stop_stick.png',150,149);
+ 			top: 50%;
+ 			margin-top: -240px;
+ 			margin-left: 200px;
+
+ 			/*样式变化动画*/
+ 			@include active_ss(3s ease-out 0s) {
+				@include transform(rotate(360deg));
+ 			}
+ 		}
+ 		.p6-text1 {
+ 			font-size: 24px;
+ 			color: white;
+ 			@include position50(-450,250);
+
+ 			/*样式变化动画*/
+			margin-left: -1000px;
+			@include opacity(0);
+ 			@include active_ss {
+				margin-left: -450px;
+				@include opacity(1);
+ 			}
+ 		}
+ 	}
+ }
+
+ .page7 {
+ 	@extend %page;
+ 	background: #b4ffe5;
+ 	@at-root {
+ 		.p7-img1 {
+ 			@include imgPutMiddle('pc.png',257,178);
+ 			top: 50%;
+			margin-left: -600px;
+
+ 			/*样式变化动画*/
+			margin-top: -300px;
+			@include opacity(0);
+ 			@include active_ss(1s ease-out 1s) {
+ 				margin-top: -200px;
+				@include opacity(1);
+ 			}
+ 		}
+ 		.p7-img2 {
+ 			@include imgPutMiddle('carton1.jpg',358,640);
+ 			top: 50%;
+ 			margin-top: -240px;
+
+ 			/*样式变化动画*/
+			margin-left: -1000px;
+			@include opacity(0);
+ 			@include active_ss {
+				margin-left: -200px;
+				@include opacity(1);
+ 			}
+ 		}
+ 		.p7-img3 {
+ 			@include imgPutMiddle('carton2.jpg',227,640);
+ 			top: 50%;
+ 			margin-top: -240px;
+
+ 			/*样式变化动画*/
+			margin-left: 1000px;
+			@include opacity(0);
+ 			@include active_ss {
+				margin-left: 300px;
+				@include opacity(1);
+ 			}
+ 		}
+ 		.p7-text1 {
+ 			font-size: 24px;
+ 			color: #d7568f;
+ 			@include position50(-600);
+ 			margin-left: -600px;
+
+			/*样式变化动画*/
+			margin-top: 100px;
+			@include opacity(0);
+ 			@include active_ss(1s ease-out 1s) {
+ 				margin-top: 0;
+				@include opacity(1);
+ 			}
+ 		}
+ 	}
+ }
+
+ .page8 {
+ 	@extend %page;
+ 	background: #e2eff5 url('../images/story/mobile_bg.jpg') no-repeat center center;
+ 	@at-root {
+ 		.p8-text1 {
+ 			font-size: 24px;
+ 			color: #00b69e;
+ 			@include position50(-430,-100);
+
+ 			/*样式变化动画*/
+			margin-top: 100px;
+			@include opacity(0);
+ 			@include active_ss(1s ease-out 0s) {
+ 				margin-top: -100px;
+				@include opacity(1);
+ 			}
+ 		}
+ 	}
+ }
+
+ .page9 {
+ 	@extend %page;
+ 	background: #63c2d4;
+ 	color: #fff;
+ 	text-align: center;
+ 	@at-root {
+	 	%p9-text {
+	 		letter-spacing: 3px;
+
+			/*样式变化动画*/
+	 		padding: 0px;
+			@include opacity(0);
+			@include active_ss(1s ease-out 0s) {
+	 			padding: 50px;
+				@include opacity(1);
+			}
+	 	}
+ 		.p9-text1 {
+ 			@extend %p9-text;
+ 			width: 360px;
+ 			font-size: 24px;
+ 			border-bottom: 1.5px dashed #fff;
+ 			margin: 100px auto 0;
+ 		}
+ 		.p9-text2 {
+ 			@extend %p9-text;
+ 			width: 680px;
+ 			font-size: 42px;
+ 			border-bottom: 1.5px dashed #fff;
+ 			margin: 0px auto;
+ 		}
+ 		.p9-text3 {
+ 			@extend %p9-text;
+ 			width: 700px;
+ 			font-size: 24px;
+ 			margin: 0px auto;
+ 		}
+ 		.p9-img1 {
+ 			@include imgPutMiddle('logo_bottom.png',326,60);
+ 			bottom: 50px;
+ 		}
+ 	}
+ }
+
+ .btn {
+ 	z-index: 99;
+ 	position: absolute;
+ 	top: 40%;
+ 	right: 40px;
+ 	@include opacity(0.3);
+ 	li {
+ 		width: 16px;
+ 		height: 16px;
+ 		border-radius: 50%;
+ 		background: #333;
+ 		margin-top: 16px;
+ 		cursor: pointer;
+ 	}
+ 	.active {
+ 		background: #fff;
+ 	}
+ }
+

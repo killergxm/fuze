@@ -1,0 +1,77 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+/*精灵图*/
+@import "compass/utilities/sprites";
+$index-sprite-dimensions: true;
+@import "index/*.png";  
+@include all-index-sprites();
+
+/*变量定义*/
+$showtable_height : 920px;
+
+ /*引入基础文件*/
+ @import "reset";
+ @import "compass/utilities","compass/css3";
+ @import "mixin","variables","header","footer";
+
+ /*主页属性*/
+ .showtable {
+ 	@include min-height($showtable_height);
+	position: relative;
+ }
+
+.hand_shank {
+	overflow: hidden;
+ 	@include min-height($showtable_height);
+	position: relative;
+	@include transform-style(preserve-3d);
+	@include perspective(800px);
+}
+
+ .hand_shank_img {
+ 	position: absolute;
+ 	top : 200px;
+ 	left: 50%;
+ 	margin-left: -350px;
+	@include transform(scale(5,5));
+	@include transition(transform 0.5s linear,opacity 1s);
+	opacity: 0;
+ }
+
+ .index-handshank1 {
+ 	z-index: 55;
+ }
+ .index-handshank2 {
+ 	z-index: 54;
+ }
+ .index-handshank3 {
+ 	z-index: 53;
+ }
+ .index-handshank4 {
+ 	z-index: 52;
+ }
+ .index-handshank5 {
+ 	z-index: 51;
+ }
+
+ .likeus {
+ 	position: absolute;
+ 	bottom: 140px;
+ 	left: 50%;
+ 	width: 700px;
+ 	margin-left: -350px;
+ 	text-align: center;
+ 	font-size: $fontsize_xxl;
+ 	display: none;
+ 	.text1 {
+ 		color: black;
+ 	}
+ }
+
+
+
+
+

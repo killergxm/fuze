@@ -1,0 +1,54 @@
+/*变量定义*/
+$text_top : 100px;
+
+/*精灵图*/
+@import "compass/utilities/sprites";
+ $product-sprite-dimensions: true;
+ @import "product/*.png";  
+ @include all-product-sprites();
+
+/*引入基础文件*/
+ @import "reset";
+ @import "compass/utilities","compass/css3";
+ @import "mixin","variables","header","footer";
+
+ /*本页属性*/
+ #block1 {
+ 	width: 100%;
+ 	height: 836px;
+ 	background: url('../images/product/bk1.jpg') no-repeat center bottom;
+ 	position: relative;
+ }
+
+%texts_common {
+ 	position: absolute;
+	left: 50%;
+	top: $text_top;
+	display: none;
+}
+
+ .product-text1 {
+ 	@extend %texts_common;
+ 	margin-left: -650px;
+ }
+
+ .product-text2 {
+ 	@extend %texts_common;
+ 	margin-left: -280px;
+ }
+
+ .product-text3 {
+ 	@extend %texts_common;
+ 	margin-left: 30px;
+ }
+
+ .product-text4 {
+ 	@extend %texts_common;
+ 	margin-left: 330px;
+ }
+
+ #block2 {
+ 	width: 100%;
+ 	height: 988px;
+ 	background: url('../images/product/bk2.jpg') no-repeat center bottom;
+ }

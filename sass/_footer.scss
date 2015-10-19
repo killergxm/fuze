@@ -1,0 +1,41 @@
+/*变量定义*/
+@import "compass/utilities/sprites";
+$footer_msg_width : 850px;
+$footer_msg_lineheight : 28px;
+
+/*精灵图*/
+$footer-sprite-dimensions: true;
+@import "footer/*.png";  
+@include all-footer-sprites();
+
+#footer {
+	@include min_width($common_width);
+ 	width: 100%;
+ 	background: $gray;
+ 	font-size: $fontsize_m;
+ 	padding: 15px 0;
+ }
+
+ .footer {
+ 	width: $common_width;
+ 	margin: 0 auto;
+ 	position: relative;
+ }
+
+ .message {
+ 	width : $footer_msg_width;
+ 	li {
+ 		color: $dark_gray;
+ 		height: $footer_msg_lineheight;
+ 		line-height: $footer_msg_lineheight;
+ 	}
+ 	.font_stress {
+		font-weight: bold;
+ 	}
+ }
+
+ .footerlogo {
+ 	position: absolute;
+ 	top: 25px;
+ 	right: 30px;
+ }

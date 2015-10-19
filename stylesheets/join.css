@@ -1,0 +1,367 @@
+@charset "UTF-8";
+/*变量*/
+/*精灵图*/
+/* line 80, join/*.png */
+.join-sprite, .join-icon, .join-iftext, .cdt_title, .join-join, .ju-img2, .join-jointext, .ju-title, .join-title {
+  background-image: url('/images/join-s3cd8a27e62.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.join-icon {
+  background-position: 0 0;
+  height: 6px;
+  width: 6px;
+}
+
+/* line 84, ../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.join-iftext, .cdt_title {
+  background-position: 0 -6px;
+  height: 55px;
+  width: 155px;
+}
+
+/* line 84, ../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.join-join, .ju-img2 {
+  background-position: 0 -61px;
+  height: 119px;
+  width: 469px;
+}
+
+/* line 84, ../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.join-jointext, .ju-title {
+  background-position: 0 -180px;
+  height: 55px;
+  width: 155px;
+}
+
+/* line 84, ../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.join-title {
+  background-position: 0 -235px;
+  height: 104px;
+  width: 176px;
+}
+
+/*引入基础文件*/
+/* line 1, ../sass/_reset.scss */
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* line 6, ../sass/_reset.scss */
+html {
+  height: 100%;
+}
+
+/* line 9, ../sass/_reset.scss */
+body {
+  font-family: '微软雅黑';
+  font-size: 14px;
+  height: auto;
+  color: #ccc;
+  /*overflow: hidden;*/
+  width: 100%;
+  height: 100%;
+}
+
+/* line 18, ../sass/_reset.scss */
+li {
+  list-style: none;
+}
+
+/* line 21, ../sass/_reset.scss */
+a {
+  text-decoration: none;
+  color: #eee;
+}
+
+/* line 25, ../sass/_reset.scss */
+a:hover {
+  color: #20b8c5;
+}
+
+/*font*/
+/*color*/
+/*common*/
+/*字体样式*/
+/*定位*/
+/*图片定位*/
+/*精灵图*/
+/* line 56, header/*.png */
+.header-sprite, .header-chooselan, .header-logo {
+  background-image: url('/images/header-s382d500d66.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.header-chooselan {
+  background-position: 0 0;
+  height: 40px;
+  width: 40px;
+}
+
+/* line 84, ../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.header-logo {
+  background-position: 0 -40px;
+  height: 32px;
+  width: 140px;
+}
+
+/*变量定义*/
+/* line 17, ../sass/_header.scss */
+.header {
+  width: 100%;
+  height: 70px;
+  background: #041319;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 99999999;
+  display: block;
+  font-size: 15px;
+}
+
+/* line 29, ../sass/_header.scss */
+.header_fill {
+  width: 100%;
+  height: 70px;
+}
+
+/* line 34, ../sass/_header.scss */
+.header_bar {
+  color: #fff;
+  cursor: default;
+  width: 1080px;
+  height: 70px;
+  margin: 0 auto;
+  position: relative;
+}
+/* line 42, ../sass/_header.scss */
+.header_bar .logo {
+  margin-top: 19px;
+  margin-left: 0px;
+  float: left;
+}
+/* line 46, ../sass/_header.scss */
+.header_bar .logo a {
+  height: 70px;
+  width: 140px;
+  cursor: pointer;
+  display: block;
+  margin-top: -19px;
+}
+/* line 54, ../sass/_header.scss */
+.header_bar dl {
+  width: 115px;
+  height: 70px;
+  line-height: 70px;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  right: 0;
+  padding-right: 35px;
+}
+/* line 66, ../sass/_header.scss */
+.header-chooselan {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 15px;
+}
+/* line 76, ../sass/_header.scss */
+.header_bar dd {
+  display: none;
+}
+
+/* line 81, ../sass/_header.scss */
+.header_nav {
+  float: right;
+  padding-right: 115px;
+  height: 70px;
+  line-height: 70px;
+}
+/* line 86, ../sass/_header.scss */
+.header_nav a {
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+/*变量定义*/
+/*精灵图*/
+/* line 48, footer/*.png */
+.footer-sprite, .footer-logo {
+  background-image: url('/images/footer-sa3c1b9c6a5.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.footer-logo {
+  background-position: 0 0;
+  height: 32px;
+  width: 140px;
+}
+
+/* line 11, ../sass/_footer.scss */
+#footer {
+  min-width: 1080px;
+  width: 100%;
+  background: #d5d7dd;
+  font-size: 15px;
+  padding: 15px 0;
+}
+
+/* line 19, ../sass/_footer.scss */
+.footer {
+  width: 1080px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* line 25, ../sass/_footer.scss */
+.message {
+  width: 850px;
+}
+/* line 27, ../sass/_footer.scss */
+.message li {
+  color: #707484;
+  height: 28px;
+  line-height: 28px;
+}
+/* line 32, ../sass/_footer.scss */
+.message .font_stress {
+  font-weight: bold;
+}
+
+/* line 37, ../sass/_footer.scss */
+.footerlogo {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+}
+
+/*样式*/
+/* line 17, ../sass/join.scss */
+.joinus {
+  background: #141414;
+  width: 100%;
+  padding: 75px 0 20px;
+}
+
+/* line 23, ../sass/join.scss */
+.ju-title {
+  margin: 0 auto;
+}
+
+/* line 28, ../sass/join.scss */
+.ju-text1 {
+  font-size: 16px;
+  line-height: 32px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* line 33, ../sass/join.scss */
+.ju-img1 {
+  background: url("../images/join/us.jpg") no-repeat center center;
+  height: 362px;
+}
+
+/* line 38, ../sass/join.scss */
+.ju-text2 {
+  margin-top: 70px;
+  font-size: 16px;
+  line-height: 32px;
+  text-align: center;
+}
+
+/* line 43, ../sass/join.scss */
+.ju-sendto {
+  color: #67b4e0;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 80px;
+}
+
+/* line 50, ../sass/join.scss */
+.ju-img2 {
+  margin: 20px auto 0;
+}
+
+/* line 55, ../sass/join.scss */
+.condition {
+  background: #1a1a1a;
+  padding-top: 60px;
+}
+
+/* line 60, ../sass/join.scss */
+.cdt_title {
+  margin: 0 auto 40px;
+}
+
+/* line 65, ../sass/join.scss */
+.cdt_content {
+  width: 1232px;
+  margin: 0 auto;
+}
+/* line 68, ../sass/join.scss */
+.cdt_content:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 77, ../sass/join.scss */
+.cdt_block {
+  width: 378.66667px;
+  height: 820px;
+  background: #2d2d2d;
+  float: left;
+  margin: 0 16px 32px 16px;
+}
+
+/* line 85, ../sass/join.scss */
+.cdt_block_title {
+  background: #262626 url("../images/join/title.png") no-repeat 0 0;
+  width: 100%;
+  height: 104px;
+  text-align: right;
+}
+
+/* line 93, ../sass/join.scss */
+.cdt_block_title h1 {
+  color: #67b4e0;
+  font-size: 24px;
+  padding: 20px 15px 10px;
+  letter-spacing: 2px;
+}
+/* line 99, ../sass/join.scss */
+.cdt_block_title h2 {
+  padding-right: 20px;
+  font-size: 15px;
+}
+
+/* line 105, ../sass/join.scss */
+.cdt_item_title {
+  font-size: 16px;
+  height: 60px;
+  line-height: 90px;
+  padding: 0 10px;
+}
+
+/* line 112, ../sass/join.scss */
+.cdt_item_cont {
+  font-size: 14px;
+  padding: 0 20px;
+  line-height: 26px;
+}
+
+/* line 118, ../sass/join.scss */
+.join-icon {
+  display: inline-block;
+  margin: -10px 10px 0 0;
+}

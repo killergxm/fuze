@@ -1,0 +1,121 @@
+/*变量*/
+$cdt_block_margin : 16px;
+$cdt_content_width : 1232px;
+
+/*精灵图*/
+@import "compass/utilities/sprites";
+$join-sprite-dimensions: true;
+@import "join/*.png";  
+@include all-join-sprites();
+
+/*引入基础文件*/
+ @import "reset";
+ @import "compass";
+ @import "mixin","variables","header","footer";
+
+ /*样式*/
+ .joinus {
+ 	background: $grey_black;
+ 	width: 100%;
+ 	padding: 75px 0 20px;
+ }
+
+.ju-title {
+	margin: 0 auto;
+	@extend .join-jointext;
+ }
+
+ .ju-text1 {
+ 	@include normal-font;
+ 	margin-bottom: 50px;
+ }
+
+ .ju-img1 {
+ 	background: url('../images/join/us.jpg') no-repeat center center;
+ 	height: 362px;
+ }
+
+ .ju-text2 {
+ 	margin-top: 70px;
+ 	@include normal-font;
+ }
+
+ .ju-sendto {
+	color: $blue;
+	text-align: center;
+	font-size: 18px;
+	margin-top: 80px;
+ }
+
+ .ju-img2 {
+ 	margin: 20px auto 0;
+ 	@extend .join-join; 
+ }
+
+ .condition {
+ 	background: $grey_black2;
+ 	padding-top: 60px;
+ }
+
+ .cdt_title {
+ 	@extend .join-iftext;
+ 	margin: 0 auto 40px;
+ }
+
+ .cdt_content {
+ 	width: $cdt_content_width;
+ 	margin: 0 auto;
+ 	&:after {
+ 		content: "."; 
+	    display: block;
+	    height: 0; 
+	    clear: both; 
+	    visibility: hidden;
+ 	};
+ }
+
+ .cdt_block {
+ 	width: ($cdt_content_width - 6 * $cdt_block_margin)/3;
+ 	height: 820px;
+ 	background: $grey_black3;
+ 	float: left;
+ 	margin: 0 $cdt_block_margin 2*$cdt_block_margin $cdt_block_margin;
+ }
+
+ .cdt_block_title {
+ 	background: #262626 url('../images/join/title.png') no-repeat 0 0;
+ 	width: 100%;
+ 	height: 104px;
+ 	text-align: right;
+ }
+
+ .cdt_block_title {
+ 	h1 {
+ 		color: $blue;
+ 		font-size: $fontsize_xl;
+ 		padding: 20px 15px 10px;
+ 		letter-spacing: 2px;
+ 	}
+ 	h2 {
+ 		padding-right: 20px;
+ 		font-size: $fontsize_m;
+ 	}
+ }
+
+ .cdt_item_title {
+ 	font-size: $fontsize_title;
+ 	height: 60px;
+ 	line-height: 90px;
+ 	padding: 0 10px;
+ }
+
+ .cdt_item_cont {
+ 	font-size: $fontsize_content;
+ 	padding: 0 20px;
+ 	line-height: 26px;
+ }
+
+ .join-icon {
+ 	display: inline-block;
+ 	margin: -10px 10px 0 0;
+ }

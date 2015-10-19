@@ -1,0 +1,90 @@
+/*精灵图*/
+@import "compass/utilities/sprites";
+$header-sprite-dimensions: true;
+@import "header/*.png";  
+@include all-header-sprites();
+
+
+/*变量定义*/
+$header_width : $common_width;
+$header_height : 70px;
+$header_logo_height : 32px;
+$header_logo_width : 140px;
+$header_chosselan_box_width : 115px;
+$header_chooselan_ico_height : 40px;
+$header_font_color : #fff;
+
+.header {
+	width: 100%;
+	height: $header_height;
+	background: $blackish_green;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 99999999;
+	display: block;
+	font-size: $fontsize_m;
+}
+
+.header_fill {
+	width: 100%;
+	height: $header_height;
+}
+
+.header_bar {
+	$logomargin : ($header_height - $header_logo_height)/2;
+	color: $header_font_color;
+	cursor: default;
+	width: $header_width;
+	height: $header_height;
+	margin: 0 auto;
+	position: relative;
+	.logo {
+		margin-top: $logomargin;
+		margin-left: 0px;
+		float: left;
+		a {
+			height: $header_height;
+			width: $header_logo_width;
+			cursor: pointer;
+			display: block;
+			margin-top: -$logomargin;
+		}
+	}
+	dl {
+		width: $header_chosselan_box_width;
+		height: $header_height;
+		line-height: $header_height;
+		position: absolute;
+		text-align: right;
+		top: 0;
+		right: 0;
+		padding-right: 35px;
+	}
+	dt {
+		@at-root {
+			.header-chooselan {
+				display: inline-block;
+				position: absolute;
+				right: 0;
+				top: 0;
+				margin-top: ($header_height - $header_chooselan_ico_height)/2;
+			}
+		}
+			
+	}
+	dd {
+		display: none;
+	}
+}
+
+.header_nav {
+	float: right;
+	padding-right: $header_chosselan_box_width;
+	height: $header_height;
+	line-height: $header_height;
+	a {
+		text-decoration: none;
+		padding: 0 15px;
+	}
+}

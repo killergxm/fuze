@@ -1,0 +1,59 @@
+/*引入基础文件*/
+ @import "reset";
+ @import "compass";
+ @import "mixin","variables","header","footer";
+
+ /*样式*/
+ .root {
+ 	@include min-width($common_width);
+ 	background-color: black;
+ 	color: white;
+ }
+
+ .block1 {
+ 	background: url('../images/about/bk1.png') no-repeat center center;
+	height: 816px;
+ }
+
+ .b2-text1 {
+ 	width: 100%;
+ 	text-align: center;
+ 	font-size: $fontsize_xxl;
+ }
+
+ .b2-box {
+ 	height: 316px;
+ 	width: 760px;
+ 	margin: 0 auto 50px;
+ 	background: url('../images/about/box.png') no-repeat 0 0;
+ 	position: relative;
+ }
+
+ .b2-boxlogo {
+ 	height: 150px;
+ 	width: 150px;
+ 	position: absolute;
+ 	left: 310px;
+ 	top: 132px;
+ 	background: url('../images/about/logo.gif') no-repeat 0 0;
+ }
+
+ .b2-text1 {
+ 	@include normal-font;
+ }
+
+ .b3-img {
+ 	height: 800px;
+ 	margin: 120px auto 60px;
+ 	background: url("../images/about/devs.jpg") no-repeat center center;
+ }
+
+ .b3-text1 {
+ 	@include normal-font;
+ }
+
+ .b4-img {
+ 	margin-top: 20px;
+ 	height: 317px;
+ 	background: url("../images/about/bottom.jpg") no-repeat center center;
+ }
